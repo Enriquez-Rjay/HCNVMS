@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - HCNVMS</title>
+    <link rel="stylesheet" href="../css/settings.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html" class="active"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h2>Settings</h2>
+                <p>Organize profile, system, backup, logs, and security in one panel.</p>
+            </div>
+            <button class="btn btn-secondary" data-action="open-help">Need Help?</button>
+        </div>
+
+        <div class="settings-grid">
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <h3>Profile Settings</h3>
+                    <p>Manage your information and contact preferences.</p>
+                </div>
+                <form class="settings-form" data-action="save-profile">
+                    <div class="form-group">
+                        <label for="profileName" class="required">Full Name</label>
+                        <input type="text" id="profileName" placeholder="Juan Dela Cruz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileEmail" class="required">Email</label>
+                        <input type="email" id="profileEmail" placeholder="juan@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePhone">Contact Number <span class="optional-label">(Optional)</span></label>
+                        <input type="tel" id="profilePhone" placeholder="09XXXXXXXXX" maxlength="11">
+                    </div>
+                    <div class="form-group">
+                        <label for="profileAddress">Address <span class="optional-label">(Optional)</span></label>
+                        <textarea id="profileAddress" rows="2" placeholder="Barangay, Municipality, Province"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Profile Settings</button>
+                </form>
+            </section>
+
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <h3>System Settings</h3>
+                    <p>Configure general behaviors for the vaccination center.</p>
+                </div>
+                <form class="settings-form" data-action="save-system">
+                    <div class="form-group">
+                        <label for="systemTimezone" class="required">Timezone</label>
+                        <select id="systemTimezone" required>
+                            <option value="UTC+8">UTC +8 (Philippines)</option>
+                            <option value="UTC+9">UTC +9</option>
+                            <option value="UTC+7">UTC +7</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="systemLanguage" class="required">Language</label>
+                        <select id="systemLanguage" required>
+                            <option value="en">English</option>
+                            <option value="ceb">Cebuano</option>
+                            <option value="fil">Filipino</option>
+                        </select>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="systemAutoUpdates" checked>
+                        <label for="systemAutoUpdates">Enable automatic updates</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="systemNotifications" checked>
+                        <label for="systemNotifications">Send email and SMS reminders</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save System Settings</button>
+                </form>
+            </section>
+
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <h3>Backup &amp; Restore</h3>
+                    <p>Protect your data with scheduled and manual backups.</p>
+                </div>
+                <form class="settings-form" data-action="save-backup">
+                    <div class="form-group">
+                        <label for="backupFrequency" class="required">Backup Frequency</label>
+                        <select id="backupFrequency" required>
+                            <option value="daily">Daily</option>
+                            <option value="weekly" selected>Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="backupLocation" class="required">Backup Location</label>
+                        <input type="text" id="backupLocation" value="D:/hcnvms/backups" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="backupAuto" checked>
+                        <label for="backupAuto">Enable automatic backups</label>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Save Backup Plan</button>
+                        <button type="button" class="btn btn-secondary" data-action="run-backup">Run Manual Backup</button>
+                        <button type="button" class="btn btn-secondary" data-action="restore-backup">Restore Backup</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <h3>Activity Logs</h3>
+                    <p>Review the latest actions performed in the system.</p>
+                </div>
+                <div class="activity-log">
+                    <ul id="activityList">
+                        <li><span>09:02 AM</span> Admin exported vaccination report.</li>
+                        <li><span>08:45 AM</span> Staff Maria registered a newborn patient.</li>
+                        <li><span>08:10 AM</span> Inventory auto-sync completed.</li>
+                    </ul>
+                    <div class="button-group">
+                        <button class="btn btn-primary" data-action="refresh-logs">Refresh Logs</button>
+                        <button class="btn btn-secondary" data-action="download-logs">Download Logs</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="settings-card">
+                <div class="settings-card-header">
+                    <h3>Security (Change Password)</h3>
+                    <p>Update your password regularly to keep the system safe.</p>
+                </div>
+                <form class="settings-form" data-action="change-password">
+                    <div class="form-group">
+                        <label for="currentPassword" class="required">Current Password</label>
+                        <input type="password" id="currentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword" class="required">New Password</label>
+                        <input type="password" id="newPassword" minlength="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="required">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" minlength="8" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="forceLogout">
+                        <label for="forceLogout">Log out all other sessions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Password</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/settings.js"></script>
+</body>
+</html>
+

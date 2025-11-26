@@ -1,0 +1,62 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Add Stock - HCNVMS</title>
+     <link rel="stylesheet" href="../css/vaccines.css">
+ </head>
+ <body>
+     <!-- Sidebar Navigation (same as other pages) -->
+     <aside class="sidebar">
+         <div class="logo">
+             <h1>HCNVMS</h1>
+         </div>
+         <ul class="sidebar-nav">
+             <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+             <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+             <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+             <li><a href="inventory.html" class="active"><span>📦</span> Inventory</a></li>
+             <li><a href="users.html"><span>👥</span> Users</a></li>
+             <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+             <li><a href="login.html">Log Out</a></li>
+         </ul>
+     </aside>
+
+     <!-- Main Content -->
+     <main class="main-content">
+         <div class="page-header">
+             <h2>Add New Stock</h2>
+         </div>
+
+         <section class="inline-add-card">
+             <form id="addStockForm" class="form-grid">
+                 <div>
+                     <label for="stockVaccine" class="required">Vaccine</label>
+                     <select id="stockVaccine" required>
+                         <option value="" disabled selected>Select vaccine</option>
+                     </select>
+                 </div>
+                 <div>
+                     <label for="stockQuantity" class="required">Quantity</label>
+                     <input type="number" id="stockQuantity" min="1" required>
+                 </div>
+                 <div>
+                     <label for="stockBatch" class="required">Batch Number</label>
+                     <input type="text" id="stockBatch" required>
+                 </div>
+                 <div>
+                     <label for="stockExpiration" class="required">Expiration Date</label>
+                     <input type="date" id="stockExpiration" required>
+                 </div>
+                 <div class="form-actions span-2">
+                     <button type="submit" class="btn btn-primary">Save</button>
+                     <a href="inventory.html" class="btn btn-ghost">Cancel</a>
+                 </div>
+             </form>
+         </section>
+     </main>
+ </body>
+ </html>
+

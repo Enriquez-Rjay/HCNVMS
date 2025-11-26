@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - HCNVMS</title>
+    <link rel="stylesheet" href="../css/newborns.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html" class="active"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Patient Registration</h2>
+        </div>
+
+        <!-- Newborn Registration Form -->
+        <div class="form-container">
+            <h3>Newborn Registration</h3>
+            <form id="newbornForm" onsubmit="saveNewborn(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Newborn Name *</label>
+                        <input type="text" id="newbornName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth *</label>
+                        <input type="date" id="dateOfBirth" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Place of Birth</label>
+                        <input type="text" id="placeOfBirth">
+                    </div>
+                    <div class="form-group">
+                        <label>Mother's Name *</label>
+                        <input type="text" id="motherName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Father's Name</label>
+                        <input type="text" id="fatherName">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" id="contactNumber" maxlength="11">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea id="address" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Birth Certificate Number</label>
+                        <input type="text" id="birthCertificate">
+                    </div>
+                    <div class="form-group full-width">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="isVaccinated">
+                            <label for="isVaccinated">Is the newborn vaccinated?</label>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Additional Notes</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button type="submit" class="btn btn-primary">Register Newborn</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Patient Records Search -->
+        <div class="form-container">
+            <h3>Patient Records</h3>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by patient name or ID" onkeyup="searchPatients()">
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/newborns.js"></script>
+</body>
+</html>

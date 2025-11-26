@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduling - HCNVMS</title>
+    <link rel="stylesheet" href="../css/schedules.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Schedule Appointment</h2>
+        </div>
+
+        <div class="schedule-layout">
+            <!-- Schedule Form -->
+            <div class="schedule-form-section">
+                <h3>Schedule Appointment</h3>
+                <form id="scheduleForm" onsubmit="scheduleAppointment(event)">
+                    <div class="form-group">
+                        <label>Vaccination Type</label>
+                        <select id="vaccinationType" required>
+                            <option value="">Select Type</option>
+                            <option value="BCG">BCG</option>
+                            <option value="Hepatitis B">Hepatitis B</option>
+                            <option value="DPT">DPT</option>
+                            <option value="Polio">Polio</option>
+                            <option value="MMR">MMR</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" id="patientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" id="appointmentTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea id="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Schedule</button>
+                </form>
+            </div>
+
+            <!-- Calendar -->
+            <div class="calendar-section">
+                <h3>Appointments Calendar</h3>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-nav">←</button>
+                        <div class="calendar-month">July 2024</div>
+                        <button class="calendar-nav">→</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-name">Sun</div>
+                        <div class="calendar-day-name">Mon</div>
+                        <div class="calendar-day-name">Tue</div>
+                        <div class="calendar-day-name">Wed</div>
+                        <div class="calendar-day-name">Thu</div>
+                        <div class="calendar-day-name">Fri</div>
+                        <div class="calendar-day-name">Sat</div>
+                        
+                        <div class="calendar-day other-month">30</div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div>
+                        <div class="calendar-day">6</div>
+                        <div class="calendar-day">7</div>
+                        <div class="calendar-day">8</div>
+                        <div class="calendar-day">9</div>
+                        <div class="calendar-day has-appointment">10</div>
+                        <div class="calendar-day">11</div>
+                        <div class="calendar-day">12</div>
+                        <div class="calendar-day">13</div>
+                        <div class="calendar-day">14</div>
+                        <div class="calendar-day">15</div>
+                        <div class="calendar-day">16</div>
+                        <div class="calendar-day">17</div>
+                        <div class="calendar-day">18</div>
+                        <div class="calendar-day">19</div>
+                        <div class="calendar-day">20</div>
+                        <div class="calendar-day">21</div>
+                        <div class="calendar-day">22</div>
+                        <div class="calendar-day">23</div>
+                        <div class="calendar-day">24</div>
+                        <div class="calendar-day">25</div>
+                        <div class="calendar-day">26</div>
+                        <div class="calendar-day">27</div>
+                        <div class="calendar-day">28</div>
+                        <div class="calendar-day">29</div>
+                        <div class="calendar-day">30</div>
+                        <div class="calendar-day">31</div>
+                    </div>
+                </div>
+
+                <div class="appointments-list">
+                    <h4>Scheduled Appointments for July 10, 2024</h4>
+                    <div class="appointment-item">
+                        <div class="appointment-item-header">
+                            <span class="appointment-time">09:00 AM</span>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <div class="appointment-details">
+                            <p><strong>Patient:</strong> John Doe</p>
+                            <p><strong>Vaccine:</strong> BCG</p>
+                        </div>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="appointment-item-header">
+                            <span class="appointment-time">10:30 AM</span>
+                            <span class="status-badge status-pending">Pending</span>
+                        </div>
+                        <div class="appointment-details">
+                            <p><strong>Patient:</strong> Jane Smith</p>
+                            <p><strong>Vaccine:</strong> Hepatitis B</p>
+                        </div>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="appointment-item-header">
+                            <span class="appointment-time">02:00 PM</span>
+                            <span class="status-badge status-pending">Pending</span>
+                        </div>
+                        <div class="appointment-details">
+                            <p><strong>Patient:</strong> Mike Johnson</p>
+                            <p><strong>Vaccine:</strong> DPT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/schedules.js"></script>
+</body>
+</html>

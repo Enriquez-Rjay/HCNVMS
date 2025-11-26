@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Stock Management - HCNVMS</title>
+    <link rel="stylesheet" href="../css/vaccines.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html" class="active"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Vaccine Stock Management</h2>
+        </div>
+
+        <div class="search-add-bar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search vaccines..." id="searchInput">
+            </div>
+            <a href="add_stock.html" class="btn btn-primary">Add New Stock</a>
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Vaccine Name</th>
+                        <th>Manufacturer</th>
+                        <th>Batch No</th>
+                        <th>Expiry Date</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Storage Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inventory records will be managed by the admin -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
+

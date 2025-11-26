@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccines - HCNVMS</title>
+    <link rel="stylesheet" href="../css/vaccines.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html" class="active"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Vaccine Management</h2>
+        </div>
+
+        <div class="search-add-bar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search vaccines..." id="searchInput">
+            </div>
+            <a href="add_vaccine.html" class="btn btn-primary">Add New Vaccine</a>
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Vaccine Name</th>
+                        <th>Description</th>
+                        <th>Recommended Age (weeks)</th>
+                        <th>Dose #</th>
+                        <th>Mandatory</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="vaccinesTableBody">
+                    <!-- Vaccine records will be loaded dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/vaccines.js"></script>
+</body>
+</html>

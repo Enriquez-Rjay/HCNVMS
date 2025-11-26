@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCNVMS Dashboard</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html" class="active"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>HCNVMS Dashboard</h2>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Total Patients</p>
+            </div>
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Total Vaccinations</p>
+            </div>
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Total Vaccines</p>
+            </div>
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Vaccinated By Month</p>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-section">
+            <div class="coverage-card">
+                <h3>Vaccination Coverage Rate</h3>
+                <div class="coverage-rate">0%</div>
+            </div>
+            <div class="chart-card">
+                <h3>Vaccination Trends</h3>
+                <div class="chart-container">
+                    <div class="line-chart">
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 75%;"></div>
+                        <div class="chart-bar" style="height: 85%;"></div>
+                        <div class="chart-bar" style="height: 70%;"></div>
+                        <div class="chart-bar" style="height: 90%;"></div>
+                        <div class="chart-bar" style="height: 100%;"></div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>Jan</span>
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

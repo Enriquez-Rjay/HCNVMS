@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vaccine - HCNVMS</title>
+    <link rel="stylesheet" href="../css/vaccines.css">
+</head>
+<body>
+    <!-- Sidebar Navigation (same as other pages) -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html" class="active"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Add New Vaccine</h2>
+        </div>
+
+        <section class="inline-add-card">
+            <form id="addVaccineForm" class="form-grid">
+                <div>
+                    <label for="vaccineName" class="required">Vaccine Name</label>
+                    <select id="vaccineName" required>
+                        <option value="" disabled selected>Select vaccine</option>
+                        <option value="BCG">BCG</option>
+                        <option value="Hepatitis B">Hepatitis B</option>
+                        <option value="DPT-HepB-Hib (Pentavalent)">DPT-HepB-Hib (Pentavalent)</option>
+                        <option value="OPV">OPV</option>
+                        <option value="IPV">IPV</option>
+                        <option value="PCV">PCV</option>
+                        <option value="Measles">Measles</option>
+                        <option value="MMR">MMR</option>
+                        <option value="Rotavirus">Rotavirus</option>
+                        <option value="Influenza">Influenza</option>
+                        <option value="COVID-19">COVID-19</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="recommendedAgeWeeks" class="required">Recommended Age</label>
+                    <select id="recommendedAgeWeeks" required>
+                        <option value="" disabled selected>Select age group</option>
+                        <option value="0">At Birth</option>
+                        <option value="6">6 Weeks</option>
+                        <option value="10">10 Weeks</option>
+                        <option value="14">14 Weeks</option>
+                        <option value="24">6 Months</option>
+                        <option value="36">9 Months</option>
+                        <option value="52">12 Months</option>
+                        <option value="64">15 Months</option>
+                        <option value="78">18 Months</option>
+                        <option value="260">4–6 Years</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="doseNumber" class="required">Dose</label>
+                    <select id="doseNumber" required>
+                        <option value="" disabled selected>Select dose</option>
+                        <option value="1">1st Dose</option>
+                        <option value="2">2nd Dose</option>
+                        <option value="3">3rd Dose</option>
+                        <option value="4">4th Dose</option>
+                        <option value="99">Booster</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="isMandatory" class="required">Mandatory</label>
+                    <select id="isMandatory" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="span-2">
+                    <label for="vaccineDescription">Description</label>
+                    <select id="vaccineDescription">
+                        <option value="" selected>Optional: select vaccine notes</option>
+                        <option value="Safe for newborns, recommended at birth; usually single dose.">Safe for newborns, recommended at birth; usually single dose.</option>
+                        <option value="Primary series for infants; follow schedule for multiple doses.">Primary series for infants; follow schedule for multiple doses.</option>
+                        <option value="Booster dose to reinforce immunity in older infants/children.">Booster dose to reinforce immunity in older infants/children.</option>
+                        <option value="Recommended for high‑risk children; follow clinic protocol.">Recommended for high‑risk children; follow clinic protocol.</option>
+                        <option value="Check current DOH/clinic guidelines before administration.">Check current DOH/clinic guidelines before administration.</option>
+                    </select>
+                </div>
+                <div class="form-actions span-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="vaccines.html" class="btn btn-ghost">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/add_vaccine.js"></script>
+</body>
+</html>

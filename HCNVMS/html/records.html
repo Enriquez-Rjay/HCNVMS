@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination Records - HCNVMS</title>
+    <link rel="stylesheet" href="../css/records.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>HCNVMS</h1>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html"><span>📊</span> Dashboard</a></li>
+            <li><a href="newborns.html"><span>👶</span> Patients</a></li>
+            <li><a href="vaccines.html"><span>💉</span> Vaccinations</a></li>
+            <li><a href="inventory.html"><span>📦</span> Inventory</a></li>
+            <li><a href="users.html"><span>👥</span> Users</a></li>
+            <li><a href="settings.html"><span>⚙️</span> Settings</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>Vaccination Records</h2>
+        </div>
+
+        <div class="records-layout">
+            <!-- Vaccination Timeline -->
+            <div class="timeline-section">
+                <h3>Vaccination Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>BCG Vaccine</h4>
+                        <p>March 10, 2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Hepatitis B Vaccine</h4>
+                        <p>March 10, 2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>DPT Vaccine</h4>
+                        <p>April 15, 2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Polio Vaccine</h4>
+                        <p>April 15, 2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>MMR Vaccine</h4>
+                        <p>May 20, 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vaccination Details -->
+            <div class="details-section">
+                <h3>Vaccination Details</h3>
+                <table class="details-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Patient</th>
+                            <th>Vaccine</th>
+                            <th>Date</th>
+                            <th>Administered By</th>
+                            <th>Batch No.</th>
+                            <th>Side Effects</th>
+                            <th>Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recordsTableBody">
+                        <!-- Filled dynamically by records.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/records.js"></script>
+</body>
+</html>
